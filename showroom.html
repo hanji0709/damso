@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAMSO 담소 — 쇼룸 예약</title>
+<meta name="description" content="머무는 집, 성수 쇼룸. 예약하신 시간에는 한 팀만 모십니다.">
+<script>if (window.matchMedia && matchMedia('(prefers-reduced-motion: no-preference)').matches) document.documentElement.classList.add('motion');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html">
+      <svg viewBox="0 0 132 132" aria-hidden="true"><g fill="none" stroke="#2B2926" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M66 22 C61 28 71 32 66 38"/><path d="M54 46 H78 C78 56 72 62 66 62 C60 62 54 56 54 46 Z"/><rect x="12" y="66" width="108" height="10" rx="3"/><path d="M30 76 C30 92 24 102 26 116"/><path d="M102 76 C102 92 108 102 106 116"/><path d="M29 102 H103"/></g></svg>
+      <span class="wordmark">DAMSO</span>
+    </a>
+    <nav class="nav" aria-label="주 메뉴">
+      <a href="index.html#about">브랜드</a>
+      <a href="index.html#collection">컬렉션</a>
+      <a href="index.html#proof">공방</a>
+      <a href="index.html#homes">고객의 집</a>
+      <a href="showroom.html" aria-current="page">쇼룸</a>
+    </nav>
+    <a class="btn btn--primary btn--sm" href="#reserve">쇼룸 방문 예약</a>
+  </div>
+</header>
+
+<main>
+  <section class="container split showroom-intro">
+    <div class="stack gap-4" style="flex: 1 1 380px">
+      <div class="eyebrow" data-reveal style="--i:0">SHOWROOM · SEONGSU</div>
+      <h1 class="h1"><span class="word" style="--w:0"><span>머무는</span></span> <span class="word" style="--w:1"><span>집,</span></span><br><span class="word" style="--w:2"><span>성수</span></span> <span class="word" style="--w:3"><span>쇼룸</span></span></h1>
+      <p class="body body--lg" data-reveal style="--i:4">판매장이 아니라 하루 머무는 집처럼 꾸몄습니다. 예약하신 시간에는 한 팀만 모십니다. 식탁에 앉아 차를 마시며 수종 샘플을 직접 만져 보고, 천천히 둘러보세요.</p>
+      <dl class="meta-list meta-list--narrow meta-list--ruled" data-reveal style="--i:5">
+        <dt>주소</dt><dd>서울 성동구 성수이로7길 24, 1층</dd>
+        <dt>운영</dt><dd>화~일 11:00–19:00 (월 휴무) · 예약제</dd>
+        <dt>소요</dt><dd>약 60분</dd>
+        <dt>문의</dt><dd><a href="tel:0212345678">02-1234-5678</a></dd>
+      </dl>
+    </div>
+    <div class="photo" data-hero-img><img src="assets/img/showroom-consult.jpg" alt="쇼룸 상담 테이블에서 수종 샘플을 보는 고객과 상담 직원"></div>
+  </section>
+
+  <section id="reserve" class="surface">
+    <div class="container reserve section--band stack" style="gap: 40px">
+      <div class="stack" style="gap: 10px">
+        <h2 class="h2--md" style="line-height: 1.3" data-reveal>방문 예약</h2>
+        <p class="small" style="font-size: 14px" data-reveal>예약 확정은 문자로 안내드립니다.</p>
+      </div>
+
+      <div class="reserve-done" data-reserve-done tabindex="-1" hidden>
+        <div class="reserve-done__title">예약 요청을 받았습니다</div>
+        <p><span data-out="summary"></span> · 확정 문자를 곧 보내드릴게요.</p>
+        <button type="button" class="btn btn--secondary btn--sm" data-reserve-reset>다시 예약하기</button>
+      </div>
+
+      <form class="reserve-form" data-reserve-form novalidate>
+        <fieldset class="fieldset" data-reveal>
+          <legend>방문 목적</legend>
+          <div class="chips" data-choice="purpose">
+            <button type="button" class="chip chip--field" data-value="가구 둘러보기" aria-pressed="true">가구 둘러보기</button>
+            <button type="button" class="chip chip--field" data-value="맞춤 제작 상담" aria-pressed="false">맞춤 제작 상담</button>
+            <button type="button" class="chip chip--field" data-value="수선 접수" aria-pressed="false">수선 접수</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset" data-reveal>
+          <legend>날짜</legend>
+          <div class="chips--grid" data-choice="day"></div>
+        </fieldset>
+
+        <fieldset class="fieldset" data-reveal>
+          <legend>시간</legend>
+          <div class="chips--grid" data-choice="time">
+            <button type="button" class="chip chip--field" data-value="11:00" aria-pressed="false">11:00</button>
+            <button type="button" class="chip chip--field" data-value="13:00" aria-pressed="false">13:00</button>
+            <button type="button" class="chip chip--field" data-value="14:30" aria-pressed="false">14:30</button>
+            <button type="button" class="chip chip--field" data-value="16:00" aria-pressed="false">16:00</button>
+            <button type="button" class="chip chip--field" data-value="17:30" aria-pressed="false">17:30</button>
+          </div>
+        </fieldset>
+
+        <div class="field-grid" data-reveal>
+          <div class="field"><label for="nm">이름</label><input class="input" id="nm" name="name" type="text" autocomplete="name"></div>
+          <div class="field"><label for="ph">휴대전화</label><input class="input" id="ph" name="phone" type="tel" placeholder="010-0000-0000" autocomplete="tel"></div>
+          <div class="field"><label for="ppl">방문 인원</label><select class="input" id="ppl" name="people"><option>1명</option><option selected>2명</option><option>3명</option><option>4명</option></select></div>
+          <div class="field"><label for="it">관심 제품 (선택)</label><input class="input" id="it" name="interest" type="text" placeholder="예: 타원형 원목 식탁 2400"></div>
+        </div>
+
+        <div class="field" data-reveal><label for="msg">공간 이야기 (선택)</label><textarea class="input" id="msg" name="message" rows="4" placeholder="거실 크기, 함께 쓰는 가족 수 등을 알려주시면 미리 준비해 둘게요."></textarea></div>
+
+        <div class="stack" data-reveal>
+          <button type="submit" class="btn btn--primary reserve-form__submit" data-reserve-submit>날짜와 시간을 선택해 주세요</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="inquiry" class="container section--band split split--center" style="gap: var(--space-6); justify-content: space-between">
+    <div class="stack" style="flex: 1 1 420px; gap: 14px">
+      <div class="eyebrow" data-reveal>TRADE &amp; STUDIO</div>
+      <h2 class="h2--sm" style="line-height: 1.3" data-reveal>공간을 만드는 분들께</h2>
+      <p class="body" data-reveal>호텔, 레스토랑, 갤러리, 인테리어 디자이너를 위한 트레이드 프로그램과 맞춤 제작을 운영합니다.</p>
+    </div>
+    <div data-reveal>
+      <a class="btn btn--secondary" href="mailto:trade@damso.kr" style="min-height: 54px; padding: 0 28px; font-size: 15px">B2B 문의하기</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer site-footer--compact">
+  <div class="container">
+    <div class="wordmark">DAMSO</div>
+    <div class="site-footer__muted">서울 성동구 성수이로7길 24, 1층 · 02-1234-5678</div>
+  </div>
+</footer>
+
+<button type="button" class="to-top" aria-label="맨 위로">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4"/><path d="M6 10l6-6 6 6"/></svg>
+</button>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/motion.js"></script>
+</body>
+</html>

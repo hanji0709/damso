@@ -1,0 +1,70 @@
+/*
+ * DAMSO 담소 — Design tokens · 먹선 (Ink Line, A안)
+ * 한지 위의 가는 먹선. Square corners, 1px rules, no shadows.
+ */
+:root {
+  /* Brand colors (ratio 70 : 20 : 10) */
+  --color-hanji: #F4EFE6;      /* 한지 · base background */
+  --color-meok: #2B2926;       /* 먹 · text, logo, buttons, dark sections */
+  --color-oak: #B08A5B;        /* 참나무 · accent, package, engraving */
+  --color-indigo: #3D4F63;     /* 쪽빛 · seasonal secondary accent */
+  --color-moss: #6F7358;       /* 이끼 · seasonal collection */
+
+  /* Supporting colors */
+  --color-text-sub: #5E584F;   /* 보조 글자 · descriptions, meta */
+  --color-label: #6B5A43;      /* 라벨 · English eyebrow labels */
+  --color-line: #D8CFBF;       /* 선 · dividers, borders */
+  --color-surface: #FBF8F2;    /* 면 · alternating section background */
+  --color-hero: #E3D8C5;       /* 히어로 바탕 */
+  --color-field: #FFFDF8;      /* input background */
+  --color-field-line: #A39B8E; /* input / chip border */
+  --color-card: #FFFDF9;
+  --color-card-line: #E4DBCD;
+  --color-card-divider: #EDE6DA;
+  --color-photo: #D9CBB3;      /* image placeholder */
+  --color-on-dark-sub: #CFC6B6;
+  --color-on-dark-label: #D9C3A0;
+  --color-on-dark-line: #6B655C;
+  --color-on-dark-muted: #A39B8E;
+
+  /* Typography */
+  --font-display: 'Nanum Myeongjo', serif;      /* headings, body copy */
+  --font-latin: 'Cormorant Garamond', serif;    /* wordmark, eyebrow labels */
+  --font-ui: 'Noto Sans KR', sans-serif;        /* UI, meta, forms */
+
+  --label-tracking: 0.4em;
+  --wordmark-tracking: 0.3em;
+
+  /* Spacing scale: 8 · 12 · 16 · 24 · 32 · 48 · 64 */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+
+  /* Layout */
+  --container: 1280px;
+  --gutter: 32px;
+  --section-y: 120px;
+  --band-y: 96px;
+  --card-min: 300px;
+  --touch: 48px;
+  --radius: 0;
+
+  /* Motion — every transition/animation uses only these */
+  --ease-main: cubic-bezier(.2, .7, .1, 1);     /* 기본 */
+  --ease-bounce: cubic-bezier(.34, 1.4, .64, 1); /* 튕김 */
+  --t1: .22s;
+  --t2: .6s;
+  --t3: 1.2s;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 16px;
+    --section-y: 80px;
+    --band-y: 64px;
+  }
+}
